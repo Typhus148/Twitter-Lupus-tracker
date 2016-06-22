@@ -1,0 +1,22 @@
+body {
+    background-image: url("simpleShadebackground.png");
+    height: 100%;
+    width: 100%;
+    margin: 1px;
+}
+
+#vis {
+    float: left;
+    width: 982px;
+    height: 500px;
+}
+.vega {
+    height: 100%;
+    width: 100%;
+}
+
+#tweet {
+    float: right;
+    width: 454;
+    height: 780;
+}

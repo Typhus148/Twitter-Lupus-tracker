@@ -34,7 +34,7 @@ list_states = ['\bAL\b', '\bAK\b', '\bAZ\b', '\bAR\b', '\bCA\b', '\bCO\b', '\bCT
                '\bSD\b', '\bTN\b', '\bTX\b', '\bUT\b', '\bVT\b', '\bVA\b', '\bWA\b', '\bWV\b', '\bWI\b', '\bWY\b']
 
 
-# Checks whether a field is null or not
+# Checks whether location or coordinate field is null or not
 def null_checker(text):
     if text is None:
         return True
@@ -42,6 +42,7 @@ def null_checker(text):
         return False
 
 
+# checks for state abbreviation in location key
 def location_abbreviation_check(text):
     i = 0
     if len(text) == 2:
@@ -65,6 +66,7 @@ def location_abbreviation_check(text):
     return False
 
 
+# checks for state in location key if not abbreviated
 def location_verify(text):
     text = text.lower()
     i = 0
@@ -103,6 +105,7 @@ def location_verify(text):
     return False
 
 
+# Loads saved geo data into the system to be used without starting from scratch
 def geo_data_init():
     geo_data = open('geo_data_states.json', 'r')
     state_counter = json.load(geo_data)
@@ -114,15 +117,54 @@ def geo_data_init():
     geo_data.close()
 
 
+# Updates the geo data json with any new additions of tweets to a state counter
 def save_new_geo_data():
     geo_data = open('geo_data_states.json', "w")
     json.dump(states_tweet_volume, geo_data)
     geo_data.close()
 
 
+# Used to determine the thresh hold for the tweets to be bucketed in for graphing
+def thresh_hold_calculator(maxTweets):
+    x = int(maxTweets / 7)
+    threshhold = [0] * 8
+    i = 1
+    z = 0
+    y = 0
+    while i <= 8:
+        if i is 1:
+            threshhold[z] = 0
+            i += 1
+            z += 1
+        else:
+            threshhold[z] = threshhold[y] + x
+            i += 1
+            z += 1
+            y += 1
+    return threshhold
+
+
+# Gets the highest tweet counter in the state dictionary
+def maximum_tweets():
+    maxTweets = 0
+    for state in list_states_full:
+        if states_tweet_volume[state.title()] > maxTweets:
+            maxTweets = states_tweet_volume[state.title()]
+    visualizeStateData(states_tweet_volume, 'tweets', 'states', thresh_hold_calculator(maxTweets))
+
+
+# Function to be called to check a tweet for location information and add it to the map/graph
 def api_states(tweet_LG):
     if null_checker(tweet_LG['user']['location']) is False:
         if location_verify(tweet_LG['user']['location']) is False:
-            location_abbreviation_check(tweet_LG['user']['location'])
+            if location_abbreviation_check(tweet_LG['user']['location']) is True:
+                maximum_tweets()
+                return True
 
-    visualizeStateData(states_tweet_volume, 'tweets', 'states')
+            else:
+                return False
+        else:
+            maximum_tweets()
+            return True
+    else:
+        return False

@@ -15,18 +15,21 @@ def lupus_text_checker(text):
 # checks for whether some key words are in the tweet's text and if true flags the tweet as not related to lupus
 # cleans the api data for irrelevant tweets
 def tweet_filter(text):
+    i = 0
+    invalid_words = ['canis', 'homini', 'wolf', 'wolves']
     # word1 = 'homo'
-    word2 = 'canis'
-    word3 = 'homini'
+    word = 'lhandsign'
     text = text.lower()
-    # match1 = re.search(word1, text)
-    match2 = re.search(word2, text)
-    match3 = re.search(word3, text)
-
-    if match3 or match2:
-        return True
-    else:
-        return False
+    match1 = re.search(word, text)
+    while i < 4:
+        match_list = re.search(invalid_words[i], text)
+        if match_list:
+            return True
+        elif match1:
+            return False
+        else:
+            i += 1
+    return False
 
 
 def api_filterer(text):
