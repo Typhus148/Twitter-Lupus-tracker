@@ -163,16 +163,16 @@ def maximum_tweets():
 
 # Function to be called to check a tweet for location information and add it to the map/graph
 def api_states(tweet_LG):
-    state_result1 = location_abbreviation_check(tweet_LG['user']['location'])
-    state_result2 = location_abbreviation_check(tweet_LG['user']['location'])
     if null_checker(tweet_LG['user']['location']) is False:
+        state_var1 = location_verify(tweet_LG['user']['location'])
+        state_var2 = location_abbreviation_check(tweet_LG['user']['location'])
         # if no valid state from searching for full state names check for abbreviations
-        if state_result1 is False:
+        if location_verify(tweet_LG['user']['location']) is False:
             # if abbreviation returns false then it will return the state abbreviated in tweet
-            if state_result2 is False:
+            if location_abbreviation_check(tweet_LG['user']['location']) is False:
                 return False
             maximum_tweets()
-            return state_result2
+            return state_var2
         maximum_tweets()
-        return state_result1
+        return state_var1
     return False
