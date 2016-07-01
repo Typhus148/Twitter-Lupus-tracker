@@ -33,8 +33,6 @@ def tweet_filter(text):
 
 
 def lupus_api_filterer(text):
-    if (lupus_text_checker(text['text']) == True) and (tweet_filter(text['text']) == False):
-        api_states(text)
+    if lupus_text_checker(text['text']) and not tweet_filter(text['text']):
         return True
-    else:
-        return False
+    return False

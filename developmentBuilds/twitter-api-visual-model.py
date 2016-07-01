@@ -2,7 +2,8 @@ from twitter_api_auth import consumer_key, consumer_secret, access_token, access
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
-from twitter_api_filterer import geo_data_init, lupus_api_filterer, save_new_geo_data, api_states
+from twitter_api_filterer import lupus_api_filterer, api_states
+from twitter_api_util import save_new_geo_data
 import json
 
 class StdOutListener(StreamListener):
@@ -12,9 +13,10 @@ class StdOutListener(StreamListener):
             # filters tweets before storing them to see if they are related to lupus -WIP
             if lupus_api_filterer(text):
                 # checks if the tweet has any valid geo data otherwise skips updating the json file
-                if api_states(text):
+                state = api_states(text)
+                if state:
                     # Updates geo data if there was a update to the geo data counter
-                    save_new_geo_data()
+                    save_new_geo_data(state)
                 # Appends the new tweet to the list of previous tweets
                 tf.write(data)
                 # Prints the tweet into the console for visual observance of tweet coming in
@@ -25,9 +27,6 @@ class StdOutListener(StreamListener):
         print(status)
 
 def lupus_tweet_tracker_setup():
-    # Loads the previous state tweet data into memory
-    geo_data_init()
-
     # This handles Twitter authentication and the connection to Twitter Streaming API
     l = StdOutListener()
     auth = OAuthHandler(consumer_key, consumer_secret)
