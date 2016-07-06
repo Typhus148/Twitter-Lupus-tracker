@@ -1,4 +1,3 @@
-from mapping import visualizeStateData
 import re
 import json
 
@@ -133,35 +132,6 @@ def save_new_geo_data():
     update_status_file.close()
 
 
-# Used to determine the thresh hold for the tweets to be bucketed in for graphing
-def thresh_hold_calculator(maxTweets):
-    x = int(maxTweets / 7)
-    threshhold = [0] * 8
-    i = 1
-    z = 0
-    y = 0
-    while i <= 8:
-        if i is 1:
-            threshhold[z] = 0
-            i += 1
-            z += 1
-        else:
-            threshhold[z] = threshhold[y] + x
-            i += 1
-            z += 1
-            y += 1
-    return threshhold
-
-
-# Gets the highest tweet counter in the state dictionary
-def maximum_tweets():
-    maxTweets = 0
-    for state in list_states_full:
-        if states_tweet_volume[state.title()] > maxTweets:
-            maxTweets = states_tweet_volume[state.title()]
-    visualizeStateData(states_tweet_volume, 'tweets', 'states', thresh_hold_calculator(maxTweets))
-
-
 # Function to be called to check a tweet for location information and add it to the map/graph
 def api_states(tweet_LG):
     if null_checker(tweet_LG['user']['location']) is False:
@@ -172,8 +142,6 @@ def api_states(tweet_LG):
             # if abbreviation returns false then it will return the state abbreviated in tweet
             if location_abbreviation_check(tweet_LG['user']['location']) is False:
                 return False
-            maximum_tweets()
             return state_var2
-        maximum_tweets()
         return state_var1
     return False

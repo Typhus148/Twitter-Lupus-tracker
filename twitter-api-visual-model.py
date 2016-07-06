@@ -5,9 +5,9 @@ from tweepy import Stream
 from twitter_api_filterer import lupus_api_filterer
 from twitter_api_util import save_new_geo_data
 import json
-# from Dropbox_api_bot import Dropbox_api_app
 from twitter_api_states import api_states
 from twitter_api_additional_map_filters import update_geo_option_data
+# from Dropbox_api_bot import Dropbox_api_app
 
 
 class StdOutListener(StreamListener):

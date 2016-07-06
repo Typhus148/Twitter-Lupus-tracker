@@ -4,7 +4,7 @@ import vincent
 import pandas as pd
 
 
-def visualizeStateData(stateDict, dataBind, dataKey, thresholds):
+def visualizeStateData(stateDict, dataBind, dataKey, thresholds, file_name):
     statePanda = {}
     stateCount = 0
     for (key, value) in stateDict.items():
@@ -12,10 +12,10 @@ def visualizeStateData(stateDict, dataBind, dataKey, thresholds):
         stateCount += 1
     stateData = pd.DataFrame.from_dict(statePanda, orient='index')
     stateData.columns = [dataKey, dataBind]
-    visualizePandasData(stateData, dataBind, dataKey, thresholds)
+    visualizePandasData(stateData, dataBind, dataKey, thresholds, file_name)
 
 
-def visualizePandasData(stateData, dataBind, dataKey, thresholds):
+def visualizePandasData(stateData, dataBind, dataKey, thresholds, file_name):
     state_topo = 'https://raw.githubusercontent.com/wrobstory/vincent_map_data/master/us_states.topo.json'
     geo_data = [{'name': 'states', 'url': state_topo, 'feature': 'us_states.geo'}]
     vis = vincent.Map(data=stateData, geo_data=geo_data, scale=1000,
@@ -24,4 +24,4 @@ def visualizePandasData(stateData, dataBind, dataKey, thresholds):
     vis.scales[0].type = 'threshold'
     vis.scales[0].domain = thresholds
     vis.legend(title='# of Lupus Tweets')
-    vis.to_json('tweetMap.json')
+    vis.to_json(file_name)

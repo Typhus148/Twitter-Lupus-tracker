@@ -1,4 +1,6 @@
 import json
+from twitter_api_states import list_states_full
+from mapping import visualizeStateData
 
 GEO_DATA_FILENAME = 'geo_data_states.json'
 
@@ -9,6 +11,7 @@ def save_new_geo_data(state):
     with open(GEO_DATA_FILENAME, 'r') as infile:
         states_tweet_volume = json.load(infile)
     states_tweet_volume[state] += 1
+    maximum_tweets(states_tweet_volume, 'tweetMap.json')
 
     # writes new geo data to file
     with open(GEO_DATA_FILENAME, 'w') as outfile:
@@ -27,7 +30,37 @@ def save_new_geo_options_data(state, filter_option):
     with open('Geo_data_optional_tweet_filters/%s_map_filter_options.json' % filter_option, 'r') as infile:
         states_tweet_volume = json.load(infile)
     states_tweet_volume[state] += 1
+    maximum_tweets(states_tweet_volume, ('Geo_data_optional_tweet_filters/%s_tweetMap.json' % filter_option))
 
     # writes new geo data for passed option
     with open('Geo_data_optional_tweet_filters/%s_map_filter_options.json' % filter_option, 'w') as outfile:
         json.dump(states_tweet_volume, outfile)
+
+
+# Used to determine the thresh hold for the tweets to be bucketed in for graphing
+def thresh_hold_calculator(max_Tweets):
+    x = int(max_Tweets / 7)
+    thresh_hold = [0] * 8
+    i = 1
+    z = 0
+    y = 0
+    while i <= 8:
+        if i is 1:
+            thresh_hold[z] = 0
+            i += 1
+            z += 1
+        else:
+            thresh_hold[z] = thresh_hold[y] + x
+            i += 1
+            z += 1
+            y += 1
+    return thresh_hold
+
+
+# Gets the highest tweet counter in the state dictionary
+def maximum_tweets(states_tweet_volume, file_name):
+    max_Tweets = 0
+    for state in list_states_full:
+        if states_tweet_volume[state.title()] > max_Tweets:
+            max_Tweets = states_tweet_volume[state.title()]
+    visualizeStateData(states_tweet_volume, 'tweets', 'states', thresh_hold_calculator(max_Tweets), file_name)
