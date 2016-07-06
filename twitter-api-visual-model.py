@@ -1,4 +1,4 @@
-+#!/usr/bin/python3
+#!/usr/bin/python3
 from twitter_api_auth import consumer_key, consumer_secret, access_token, access_token_secret
 from streaming import StreamListener
 from tweepy import OAuthHandler
