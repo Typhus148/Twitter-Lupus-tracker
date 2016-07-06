@@ -106,6 +106,7 @@ def location_verify(text):
             i += 1
     return False
 
+
 # Outdated function will remove
 # Loads saved geo data into the system to be used without starting from scratch
 def geo_data_init():
