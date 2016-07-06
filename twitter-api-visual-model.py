@@ -18,7 +18,7 @@ class StdOutListener(StreamListener):
             if lupus_api_filterer(text):
                 # checks if the tweet has any valid geo data otherwise skips updating the json file
                 state = api_states(text)
-                if state is False:
+                if state is None:
                     update_status_file = open('geo_data_states_update_status.json', "r")
                     status_check = json.load(update_status_file)
                     update_status_file.close()

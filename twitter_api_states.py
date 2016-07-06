@@ -170,9 +170,9 @@ def api_states(tweet_LG):
         if location_verify(tweet_LG['user']['location']) is False:
             # if abbreviation returns false then it will return the state abbreviated in tweet
             if location_abbreviation_check(tweet_LG['user']['location']) is False:
-                return False
+                return None
             maximum_tweets()
             return state_var2
         maximum_tweets()
         return state_var1
-    return False
+    return None
