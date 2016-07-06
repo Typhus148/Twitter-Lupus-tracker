@@ -1,5 +1,6 @@
++#!/usr/bin/python3
 from twitter_api_auth import consumer_key, consumer_secret, access_token, access_token_secret
-from tweepy.streaming import StreamListener
+from streaming import StreamListener
 from tweepy import OAuthHandler
 from tweepy import Stream
 from twitter_api_filterer import lupus_api_filterer
@@ -47,7 +48,7 @@ def lupus_tweet_tracker_setup():
     auth = OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
     stream = Stream(auth, l)
-
+    print('Starting up the lupus tweet bot...')
     stream.filter(track=['lupus', '#lupusawarenessmonth', '#lupus', 'lupusawarenessmonth',
                          'lupus awareness month', '#TEAMLUPUS', '#beatlupus', 'lhandsign', '#lhandsign'])
 
