@@ -106,32 +106,6 @@ def location_verify(text):
     return False
 
 
-# Outdated function will remove
-# Loads saved geo data into the system to be used without starting from scratch
-def geo_data_init():
-    geo_data = open('geo_data_states.json', 'r')
-    state_counter = json.load(geo_data)
-    i = 0
-    while i < 50:
-        states_tweet_volume[list_states_full[i].title()] += state_counter[list_states_full[i].title()]
-        i += 1
-
-    geo_data.close()
-
-
-# Outdated function will remove
-# Updates the geo data json with any new additions of tweets to a state counter
-def save_new_geo_data():
-    geo_data = open('geo_data_states.json', "w")
-    json.dump(states_tweet_volume, geo_data)
-    geo_data.close()
-    update_status_file = open('geo_data_states_update_status.json', "w")
-    # File to save time stamp for comparison to see if geo_data_states.json has been updated since last call
-    update_status = {"status": True}
-    json.dump(update_status, update_status_file)
-    update_status_file.close()
-
-
 # Function to be called to check a tweet for location information and add it to the map/graph
 def api_states(tweet_LG):
     if null_checker(tweet_LG['user']['location']) is False:

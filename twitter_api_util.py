@@ -1,6 +1,7 @@
 import json
 from twitter_api_states import list_states_full
 from mapping import visualizeStateData
+from twitter_api_geo_update_color_map import updated_state_color
 
 GEO_DATA_FILENAME = 'geo_data_states.json'
 
@@ -11,6 +12,7 @@ def save_new_geo_data(state):
     with open(GEO_DATA_FILENAME, 'r') as infile:
         states_tweet_volume = json.load(infile)
     states_tweet_volume[state] += 1
+    updated_state_color(states_tweet_volume[state], state)
     maximum_tweets(states_tweet_volume, 'tweetMap.json')
 
     # writes new geo data to file
@@ -32,9 +34,12 @@ def save_new_geo_options_data(state, filter_option):
         filter_option.replace(' ', '')
 
     # states_tweet_volume = {}
+    # This is the json file that stores the counters for each state
     with open('Geo_data_optional_tweet_filters/%s_map_filter_options.json' % filter_option, 'r') as infile:
         states_tweet_volume = json.load(infile)
     states_tweet_volume[state] += 1
+    updated_state_color(state)
+    # This is the json file that will be parsed and displayed on the webpage
     maximum_tweets(states_tweet_volume, ('Geo_data_optional_tweet_filters/%s_tweetMap.json' % filter_option))
 
     # writes new geo data for passed option
@@ -65,7 +70,8 @@ def thresh_hold_calculator(max_Tweets):
 # Gets the highest tweet counter in the state dictionary
 def maximum_tweets(states_tweet_volume, file_name):
     max_Tweets = 0
+    #TODO change list_states_full since not needed due to the fact that information can be relayed from calling function
     for state in list_states_full:
-        if states_tweet_volume[state.title()] > max_Tweets:
-            max_Tweets = states_tweet_volume[state.title()]
-    visualizeStateData(states_tweet_volume, 'tweets', 'states', thresh_hold_calculator(max_Tweets), file_name)
+        if states_tweet_volume[state] > max_Tweets:
+            max_Tweets = states_tweet_volume[state]
+    visualizeStateData(states_tweet_volume, 'tweets', 'states', thresh_hold_calculator(max_Tweets), file_name, False)

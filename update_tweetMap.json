@@ -1,0 +1,306 @@
+{
+  "axes": [],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "x": "Rhode Island",
+          "y": 7
+        },
+        {
+          "x": "South Dakota",
+          "y": 2
+        },
+        {
+          "x": "Utah",
+          "y": 0
+        },
+        {
+          "x": "Alaska",
+          "y": 0
+        },
+        {
+          "x": "New Mexico",
+          "y": 0
+        },
+        {
+          "x": "Oklahoma",
+          "y": 14
+        },
+        {
+          "x": "Louisiana",
+          "y": 17
+        },
+        {
+          "x": "North Carolina",
+          "y": 19
+        },
+        {
+          "x": "Pennsylvania",
+          "y": 58
+        },
+        {
+          "x": "Texas",
+          "y": 557064617465
+        },
+        {
+          "x": "Oregon",
+          "y": 35
+        },
+        {
+          "x": "California",
+          "y": 145
+        },
+        {
+          "x": "Connecticut",
+          "y": 14
+        },
+        {
+          "x": "Colorado",
+          "y": 13
+        },
+        {
+          "x": "Georgia",
+          "y": 34
+        },
+        {
+          "x": "Wisconsin",
+          "y": 13
+        },
+        {
+          "x": "Missouri",
+          "y": 10
+        },
+        {
+          "x": "Arkansas",
+          "y": 5
+        },
+        {
+          "x": "Delaware",
+          "y": 2
+        },
+        {
+          "x": "Michigan",
+          "y": 21
+        },
+        {
+          "x": "Indiana",
+          "y": 29
+        },
+        {
+          "x": "Idaho",
+          "y": 7
+        },
+        {
+          "x": "Tennessee",
+          "y": 10
+        },
+        {
+          "x": "New Jersey",
+          "y": 32
+        },
+        {
+          "x": "Ohio",
+          "y": 39
+        },
+        {
+          "x": "West Virginia",
+          "y": 0
+        },
+        {
+          "x": "Alabama",
+          "y": 7
+        },
+        {
+          "x": "Vermont",
+          "y": 0
+        },
+        {
+          "x": "North Dakota",
+          "y": 0
+        },
+        {
+          "x": "Illinois",
+          "y": 34
+        },
+        {
+          "x": "Minnesota",
+          "y": 39
+        },
+        {
+          "x": "Nebraska",
+          "y": 4
+        },
+        {
+          "x": "Arizona",
+          "y": 73
+        },
+        {
+          "x": "New York",
+          "y": 138
+        },
+        {
+          "x": "South Carolina",
+          "y": 23
+        },
+        {
+          "x": "Maryland",
+          "y": 29
+        },
+        {
+          "x": "Wyoming",
+          "y": 2
+        },
+        {
+          "x": "Maine",
+          "y": 14
+        },
+        {
+          "x": "Mississippi",
+          "y": 11
+        },
+        {
+          "x": "Florida",
+          "y": 147
+        },
+        {
+          "x": "Washington",
+          "y": 370
+        },
+        {
+          "x": "Kansas",
+          "y": 12
+        },
+        {
+          "x": "Kentucky",
+          "y": 7
+        },
+        {
+          "x": "New Hampshire",
+          "y": 3
+        },
+        {
+          "x": "Virginia",
+          "y": 118
+        },
+        {
+          "x": "Massachusetts",
+          "y": 12
+        },
+        {
+          "x": "Hawaii",
+          "y": 3
+        },
+        {
+          "x": "Nevada",
+          "y": 19
+        },
+        {
+          "x": "Montana",
+          "y": 3
+        },
+        {
+          "x": "Iowa",
+          "y": 0
+        }
+      ]
+    },
+    {
+      "format": {
+        "feature": "us_states.geo",
+        "type": "topojson"
+      },
+      "name": "states",
+      "transform": [
+        {
+          "as": "value",
+          "default": "noval",
+          "key": "data.properties.NAME",
+          "type": "zip",
+          "with": "table",
+          "withKey": "data.x"
+        },
+        {
+          "test": "d.path!='noval' && d.value!='noval'",
+          "type": "filter"
+        },
+        {
+          "projection": "albersUsa",
+          "scale": 1000,
+          "translate": [
+            480.0,
+            250.0
+          ],
+          "type": "geopath",
+          "value": "data"
+        }
+      ],
+      "url": "https://raw.githubusercontent.com/wrobstory/vincent_map_data/master/us_states.topo.json"
+    }
+  ],
+  "height": 500,
+  "legends": [
+    {
+      "fill": "color",
+      "offset": 0,
+      "properties": {},
+      "title": "# of Lupus Tweets"
+    }
+  ],
+  "marks": [
+    {
+      "from": {
+        "data": "states"
+      },
+      "properties": {
+        "enter": {
+          "path": {
+            "field": "path"
+          },
+          "stroke": {
+            "value": "#000000"
+          }
+        },
+        "update": {
+          "fill": {
+            "field": "value.data.y",
+            "scale": "color"
+          }
+        }
+      },
+      "type": "path"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        557064617465
+      ],
+      "name": "color",
+      "range": [
+        "#fcfbfd",
+        "#efedf5",
+        "#dadaeb",
+        "#bcbddc",
+        "#9e9ac8",
+        "#807dba",
+        "#6a51a3",
+        "#54278f",
+        "#3f007d",
+        "#00FF00"
+      ],
+      "type": "threshold"
+    }
+  ],
+  "width": 960
+}
