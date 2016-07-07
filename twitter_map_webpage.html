@@ -7,10 +7,11 @@
     <script src="http://d3js.org/topojson.v1.min.js"></script>
     <script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
     <script src="http://trifacta.github.com/vega/vega.js"></script>
-    <link rel="stylesheet" type="text/css" href="twitter_map_webpage.css"/>
+    <link rel="stylesheet" type="text/css" href="twitter_map_webpage_style_sheet.css"/>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="jquery-3.0.0.min.js"></script>
 </head>
 
 <body>
@@ -25,17 +26,18 @@
         (document,"script","twitter-wjs");
     </script>
     <script src="getstatus.js"></script>
+    <script src="drop_down_menu_functionality.js"></script>
     <div id="vis">
     <div class="dropdown">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Tweet phrases filtered by state
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
-            <li><a href="#">lupus</a></li>
-            <li><a href="#">#lupusawarenessmonth</a></li>
-            <li><a href="#">lupus awareness month</a></li>
-            <li><a href="#">#TEAMLUPUS</a></li>
-            <li><a href="#">#beatlupus</a></li>
-            <li><a href="#">#lhandsign</a></li>
+            <li><a href="#" id="option-1">All Tweets</a></li>
+            <li><a href="#" id="option-2">#lupus</a></li>
+            <li><a href="#" id="option-3">#lupusawarenessmonth</a></li>
+            <li><a href="#" id="option-4">#TEAMLUPUS</a></li>
+            <li><a href="#" id="option-5">#beatlupus</a></li>
+            <li><a href="#" id="option-6">#lhandsign</a></li>
             </ul>
     </div>
     </div>

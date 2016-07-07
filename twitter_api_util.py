@@ -26,6 +26,11 @@ def save_new_geo_data(state):
 
 # Saves new geo data for tweets that are within the filter option
 def save_new_geo_options_data(state, filter_option):
+    filter_option = filter_option.lower()
+
+    if ' ' in filter_option:
+        filter_option.replace(' ', '')
+
     # states_tweet_volume = {}
     with open('Geo_data_optional_tweet_filters/%s_map_filter_options.json' % filter_option, 'r') as infile:
         states_tweet_volume = json.load(infile)
