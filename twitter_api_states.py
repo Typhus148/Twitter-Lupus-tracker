@@ -1,5 +1,5 @@
 import re
-import json
+
 
 # dictionary with counter values per state
 states_tweet_volume = {"Alabama": 0, "Alaska": 0, "Arizona": 0, "Arkansas": 0, "California": 0,
