@@ -16,8 +16,6 @@ def save_new_geo_data(state):
     with open(GEO_DATA_FILENAME, 'r') as infile:
         states_tweet_volume = json.load(infile)
     states_tweet_volume[state] += 1
-    updated_state_color(states_tweet_volume, state)
-    maximum_tweets(states_tweet_volume, 'tweetMap.json')
 
     # writes new geo data to file
     with open(GEO_DATA_FILENAME, 'w') as outfile:
@@ -28,6 +26,8 @@ def save_new_geo_data(state):
         # File to save time stamp for comparison to see if geo_data_states.json has been updated since last call
         update_status = {"status": True}
         json.dump(update_status, outfile)
+    updated_state_color(states_tweet_volume, state)
+    maximum_tweets(states_tweet_volume, 'tweetMap.json')
 
 
 # Saves new geo data for tweets that are within the filter option

@@ -7,7 +7,7 @@ from twitter_api_util import save_new_geo_data, GEO_STATES_UPDATE_STATUS
 import json
 from twitter_api_states import api_states
 from twitter_api_additional_map_filters import update_geo_option_data
-# from Dropbox_api_bot import Dropbox_api_app
+from Dropbox_api_bot import dropbox_main
 
 
 class StdOutListener(StreamListener):
@@ -31,7 +31,7 @@ class StdOutListener(StreamListener):
                     update_geo_option_data(text, state)
 
                 # Appends the new tweet to the list of previous tweets
-                # Dropbox_api_app(data)
+                dropbox_main()
                 tf.write(data)
                 # Prints the tweet into the console for visual observance of tweet coming in
                 print('@%s : %s\n' % (text['user']['screen_name'], text['text']))

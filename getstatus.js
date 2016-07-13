@@ -2,6 +2,7 @@ function parse(spec)
         {
             vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });
         }
+
 function pyTimeStamp(callback)
 {
     var xobj = new XMLHttpRequest();
@@ -17,22 +18,21 @@ function pyTimeStamp(callback)
     xobj.send(null);
 }
 
+function clearUpdate() {
+    parse("tweetMap.json");
+}
+
 function updateChecker() {
-//console.log("updateChecker has been executed.");
-pyTimeStamp(function(response)
-{
-    pyTS = JSON.parse(response);
-    console.log(pyTS.status);
-    if (pyTS.status ==  true)
+    pyTimeStamp(function(response)
     {
-       parse("tweetMap.json");
-       console.log("Map was just updated with new data!");
-    }
-    else
-    {
-      console.log("No update to map.");
-    }
-});
+        pyTS = JSON.parse(response);
+        if (pyTS.status ==  true)
+        {
+            parse("update_tweetMap.json");
+            //Replace this with a better function to sleep for 5s then reload the defualt tweetMap
+            window.setInterval(clearUpdate, 5000);
+        }
+    });
 }
 
 window.setInterval(updateChecker, 5000);
