@@ -31,7 +31,7 @@ class StdOutListener(StreamListener):
                     update_geo_option_data(text, state)
 
                 # Appends the new tweet to the list of previous tweets
-                dropbox_main()
+                dropbox_main(data)
                 tf.write(data)
                 # Prints the tweet into the console for visual observance of tweet coming in
                 print('@%s : %s\n' % (text['user']['screen_name'], text['text']))
