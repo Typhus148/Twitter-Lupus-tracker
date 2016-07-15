@@ -38,8 +38,8 @@ def create_base_options(filter_key_words):
 
 
 if __name__ == '__main__':
-    filter_options = ['lupus', '#lupusawarenessmonth', '#lupus', 'lupusawarenessmonth',
-                      'lupus awareness month', '#TEAMLUPUS', '#beatlupus', 'lhandsign', '#lhandsign']
+    filter_options = ['lupus', 'lupusawarenessmonth',
+                      'lupus awareness month', '#TEAMLUPUS', '#beatlupus', 'lhandsign']
     '''x = 0
     while x < len(filter_options):
         init_filter_option_files(filter_options[x])
