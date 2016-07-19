@@ -30,7 +30,8 @@ function updateChecker() {
         {
             parse("update_tweetMap.json");
             //Replace this with a better function to sleep for 5s then reload the defualt tweetMap
-            window.setInterval(clearUpdate, 5000);
+            //Consumes too much memory if let run for a little bit of time causeing massive page lag
+            //window.setInterval(clearUpdate, 5000);
         }
     });
 }
