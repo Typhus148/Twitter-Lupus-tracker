@@ -5,204 +5,204 @@
       "name": "table",
       "values": [
         {
-          "x": "Ohio",
-          "y": 57
-        },
-        {
-          "x": "Georgia",
-          "y": 68480
-        },
-        {
-          "x": "Arkansas",
-          "y": 8
-        },
-        {
-          "x": "Tennessee",
-          "y": 16
-        },
-        {
-          "x": "Wisconsin",
-          "y": 22
-        },
-        {
-          "x": "Oklahoma",
-          "y": 22
-        },
-        {
-          "x": "Missouri",
-          "y": 18
-        },
-        {
-          "x": "Texas",
-          "y": 232
-        },
-        {
           "x": "North Carolina",
-          "y": 0
-        },
-        {
-          "x": "Michigan",
-          "y": 0
-        },
-        {
-          "x": "Maryland",
-          "y": 8560
-        },
-        {
-          "x": "Maine",
-          "y": 24
-        },
-        {
-          "x": "California",
-          "y": 0
-        },
-        {
-          "x": "Kansas",
-          "y": 16
-        },
-        {
-          "x": "Alabama",
-          "y": 12
-        },
-        {
-          "x": "New Hampshire",
-          "y": 4
-        },
-        {
-          "x": "Idaho",
-          "y": 12
-        },
-        {
-          "x": "Nebraska",
-          "y": 6
-        },
-        {
-          "x": "Kentucky",
-          "y": 12
+          "y": 14
         },
         {
           "x": "Oregon",
-          "y": 50
-        },
-        {
-          "x": "South Carolina",
-          "y": 36
-        },
-        {
-          "x": "Minnesota",
-          "y": 0
-        },
-        {
-          "x": "Rhode Island",
-          "y": 10
-        },
-        {
-          "x": "South Dakota",
-          "y": 2
-        },
-        {
-          "x": "New Jersey",
-          "y": 34240
-        },
-        {
-          "x": "Illinois",
-          "y": 52
-        },
-        {
-          "x": "Connecticut",
-          "y": 22
-        },
-        {
-          "x": "Iowa",
-          "y": 0
-        },
-        {
-          "x": "New Mexico",
-          "y": 0
+          "y": 25
         },
         {
           "x": "Delaware",
-          "y": 2
-        },
-        {
-          "x": "Virginia",
-          "y": 17120
-        },
-        {
-          "x": "Montana",
-          "y": 6
-        },
-        {
-          "x": "Utah",
-          "y": 0
-        },
-        {
-          "x": "Washington",
-          "y": 535
-        },
-        {
-          "x": "North Dakota",
-          "y": 0
-        },
-        {
-          "x": "Colorado",
-          "y": 18
-        },
-        {
-          "x": "Vermont",
-          "y": 0
-        },
-        {
-          "x": "Florida",
-          "y": 4280
-        },
-        {
-          "x": "Indiana",
-          "y": 42
-        },
-        {
-          "x": "Pennsylvania",
-          "y": 86
-        },
-        {
-          "x": "New York",
-          "y": 216
-        },
-        {
-          "x": "Mississippi",
-          "y": 16
-        },
-        {
-          "x": "Arizona",
-          "y": 116
-        },
-        {
-          "x": "Massachusetts",
-          "y": 22
-        },
-        {
-          "x": "Alaska",
-          "y": 0
-        },
-        {
-          "x": "Wyoming",
-          "y": 4
-        },
-        {
-          "x": "Hawaii",
-          "y": 6
+          "y": 1
         },
         {
           "x": "West Virginia",
           "y": 0
         },
         {
-          "x": "Louisiana",
-          "y": 22
+          "x": "Nevada",
+          "y": 15
         },
         {
-          "x": "Nevada",
-          "y": 2140
+          "x": "Pennsylvania",
+          "y": 43
+        },
+        {
+          "x": "Massachusetts",
+          "y": 11
+        },
+        {
+          "x": "New Hampshire",
+          "y": 2
+        },
+        {
+          "x": "Hawaii",
+          "y": 3
+        },
+        {
+          "x": "Iowa",
+          "y": 0
+        },
+        {
+          "x": "Kansas",
+          "y": 8
+        },
+        {
+          "x": "Michigan",
+          "y": 17
+        },
+        {
+          "x": "Alabama",
+          "y": 6
+        },
+        {
+          "x": "Maryland",
+          "y": 23
+        },
+        {
+          "x": "Colorado",
+          "y": 9
+        },
+        {
+          "x": "Rhode Island",
+          "y": 5
+        },
+        {
+          "x": "Maine",
+          "y": 12
+        },
+        {
+          "x": "Louisiana",
+          "y": 11
+        },
+        {
+          "x": "Wyoming",
+          "y": 2
+        },
+        {
+          "x": "Alaska",
+          "y": 0
+        },
+        {
+          "x": "California",
+          "y": 109
+        },
+        {
+          "x": "Kentucky",
+          "y": 6
+        },
+        {
+          "x": "Illinois",
+          "y": 26
+        },
+        {
+          "x": "Indiana",
+          "y": 21
+        },
+        {
+          "x": "Mississippi",
+          "y": 8
+        },
+        {
+          "x": "New Jersey",
+          "y": 25
+        },
+        {
+          "x": "Missouri",
+          "y": 9
+        },
+        {
+          "x": "Florida",
+          "y": 119
+        },
+        {
+          "x": "Connecticut",
+          "y": 11
+        },
+        {
+          "x": "New York",
+          "y": 109
+        },
+        {
+          "x": "Nebraska",
+          "y": 3
+        },
+        {
+          "x": "Ohio",
+          "y": 29
+        },
+        {
+          "x": "Arkansas",
+          "y": 4
+        },
+        {
+          "x": "South Dakota",
+          "y": 1
+        },
+        {
+          "x": "Arizona",
+          "y": 58
+        },
+        {
+          "x": "Vermont",
+          "y": 0
+        },
+        {
+          "x": "Washington",
+          "y": 268
+        },
+        {
+          "x": "Utah",
+          "y": 0
+        },
+        {
+          "x": "Tennessee",
+          "y": 8
+        },
+        {
+          "x": "Montana",
+          "y": 3
+        },
+        {
+          "x": "Virginia",
+          "y": 88
+        },
+        {
+          "x": "North Dakota",
+          "y": 0
+        },
+        {
+          "x": "Oklahoma",
+          "y": 11
+        },
+        {
+          "x": "New Mexico",
+          "y": 0
+        },
+        {
+          "x": "Georgia",
+          "y": 27
+        },
+        {
+          "x": "Idaho",
+          "y": 6
+        },
+        {
+          "x": "Texas",
+          "y": 116
+        },
+        {
+          "x": "South Carolina",
+          "y": 18
+        },
+        {
+          "x": "Minnesota",
+          "y": 28
+        },
+        {
+          "x": "Wisconsin",
+          "y": 11
         }
       ]
     },
@@ -277,13 +277,13 @@
     {
       "domain": [
         0,
-        8560,
-        17120,
-        25680,
-        34240,
-        42800,
-        51360,
-        59920
+        33,
+        67,
+        100,
+        134,
+        167,
+        201,
+        234
       ],
       "name": "color",
       "range": [
