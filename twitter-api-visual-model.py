@@ -49,8 +49,8 @@ def lupus_tweet_tracker_setup():
     stream = Stream(auth, l)
 
     stream.filter(track=['lupus', '#lupusawarenessmonth', '#lupus', 'lupusawarenessmonth',
-                         'lupus awareness month', '#TEAMLUPUS', '#beatlupus', 'lhandsign', '#lhandsign', '#lupusawareness',
-                         'lupusawareness', 'lupus awareness'])
+                         'lupus awareness month', '#TEAMLUPUS', '#beatlupus', 'lhandsign', '#lhandsign',
+                         '#lupusawareness', 'lupusawareness', 'lupus awareness'])
 
 
 if __name__ == '__main__':
