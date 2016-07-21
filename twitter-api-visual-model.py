@@ -6,7 +6,7 @@ from twitter_api_filterer import lupus_api_filterer
 from twitter_api_util import save_new_geo_data, GEO_STATES_UPDATE_STATUS
 import json
 from twitter_api_states import api_states
-from twitter_api_additional_map_filters import update_geo_option_data
+# from twitter_api_additional_map_filters import update_geo_option_data
 from Dropbox_api_bot import dropbox_main
 
 
@@ -28,7 +28,7 @@ class StdOutListener(StreamListener):
                 else:
                     # Updates geo data if there was a update to the geo data counter
                     save_new_geo_data(state)
-                    update_geo_option_data(text, state)
+                    # update_geo_option_data(text, state)
 
                 # Appends the new tweet to the list of previous tweets
                 dropbox_main(data)

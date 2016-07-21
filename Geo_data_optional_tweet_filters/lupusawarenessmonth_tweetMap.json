@@ -5,47 +5,55 @@
       "name": "table",
       "values": [
         {
-          "x": "North Carolina",
-          "y": 0
-        },
-        {
-          "x": "Oregon",
-          "y": 0
-        },
-        {
           "x": "Delaware",
           "y": 0
         },
         {
-          "x": "West Virginia",
-          "y": 0
-        },
-        {
-          "x": "Nevada",
+          "x": "Washington",
           "y": 1
         },
         {
-          "x": "Pennsylvania",
+          "x": "Wyoming",
           "y": 0
         },
         {
-          "x": "Massachusetts",
+          "x": "South Dakota",
           "y": 0
         },
         {
-          "x": "New Hampshire",
+          "x": "Connecticut",
           "y": 0
         },
         {
-          "x": "Hawaii",
-          "y": 1
-        },
-        {
-          "x": "Iowa",
+          "x": "Vermont",
           "y": 0
         },
         {
-          "x": "Kansas",
+          "x": "North Carolina",
+          "y": 0
+        },
+        {
+          "x": "Wisconsin",
+          "y": 0
+        },
+        {
+          "x": "Colorado",
+          "y": 0
+        },
+        {
+          "x": "Georgia",
+          "y": 0
+        },
+        {
+          "x": "Illinois",
+          "y": 0
+        },
+        {
+          "x": "New Mexico",
+          "y": 0
+        },
+        {
+          "x": "Nebraska",
           "y": 0
         },
         {
@@ -57,15 +65,7 @@
           "y": 0
         },
         {
-          "x": "Maryland",
-          "y": 0
-        },
-        {
-          "x": "Colorado",
-          "y": 0
-        },
-        {
-          "x": "Rhode Island",
+          "x": "New Hampshire",
           "y": 0
         },
         {
@@ -73,127 +73,7 @@
           "y": 0
         },
         {
-          "x": "Louisiana",
-          "y": 0
-        },
-        {
-          "x": "Wyoming",
-          "y": 0
-        },
-        {
-          "x": "Alaska",
-          "y": 0
-        },
-        {
-          "x": "California",
-          "y": 0
-        },
-        {
-          "x": "Kentucky",
-          "y": 0
-        },
-        {
-          "x": "Illinois",
-          "y": 0
-        },
-        {
-          "x": "Indiana",
-          "y": 0
-        },
-        {
-          "x": "Mississippi",
-          "y": 0
-        },
-        {
-          "x": "New Jersey",
-          "y": 0
-        },
-        {
-          "x": "Missouri",
-          "y": 0
-        },
-        {
-          "x": "Florida",
-          "y": 0
-        },
-        {
-          "x": "Connecticut",
-          "y": 0
-        },
-        {
-          "x": "New York",
-          "y": 1
-        },
-        {
-          "x": "Nebraska",
-          "y": 0
-        },
-        {
-          "x": "Ohio",
-          "y": 1
-        },
-        {
-          "x": "Arkansas",
-          "y": 0
-        },
-        {
-          "x": "South Dakota",
-          "y": 0
-        },
-        {
-          "x": "Arizona",
-          "y": 0
-        },
-        {
-          "x": "Vermont",
-          "y": 0
-        },
-        {
-          "x": "Washington",
-          "y": 1
-        },
-        {
-          "x": "Utah",
-          "y": 0
-        },
-        {
-          "x": "Tennessee",
-          "y": 0
-        },
-        {
-          "x": "Montana",
-          "y": 0
-        },
-        {
-          "x": "Virginia",
-          "y": 0
-        },
-        {
-          "x": "North Dakota",
-          "y": 0
-        },
-        {
           "x": "Oklahoma",
-          "y": 0
-        },
-        {
-          "x": "New Mexico",
-          "y": 0
-        },
-        {
-          "x": "Georgia",
-          "y": 0
-        },
-        {
-          "x": "Idaho",
-          "y": 0
-        },
-        {
-          "x": "Texas",
-          "y": 0
-        },
-        {
-          "x": "South Carolina",
           "y": 0
         },
         {
@@ -201,7 +81,127 @@
           "y": 0
         },
         {
-          "x": "Wisconsin",
+          "x": "Kentucky",
+          "y": 0
+        },
+        {
+          "x": "Virginia",
+          "y": 0
+        },
+        {
+          "x": "Indiana",
+          "y": 0
+        },
+        {
+          "x": "North Dakota",
+          "y": 0
+        },
+        {
+          "x": "California",
+          "y": 0
+        },
+        {
+          "x": "Iowa",
+          "y": 0
+        },
+        {
+          "x": "Florida",
+          "y": 0
+        },
+        {
+          "x": "Ohio",
+          "y": 1
+        },
+        {
+          "x": "Alaska",
+          "y": 0
+        },
+        {
+          "x": "Tennessee",
+          "y": 0
+        },
+        {
+          "x": "Arizona",
+          "y": 0
+        },
+        {
+          "x": "New Jersey",
+          "y": 0
+        },
+        {
+          "x": "Pennsylvania",
+          "y": 0
+        },
+        {
+          "x": "South Carolina",
+          "y": 0
+        },
+        {
+          "x": "New York",
+          "y": 1
+        },
+        {
+          "x": "Missouri",
+          "y": 0
+        },
+        {
+          "x": "West Virginia",
+          "y": 0
+        },
+        {
+          "x": "Texas",
+          "y": 0
+        },
+        {
+          "x": "Montana",
+          "y": 0
+        },
+        {
+          "x": "Oregon",
+          "y": 0
+        },
+        {
+          "x": "Nevada",
+          "y": 1
+        },
+        {
+          "x": "Louisiana",
+          "y": 0
+        },
+        {
+          "x": "Idaho",
+          "y": 0
+        },
+        {
+          "x": "Arkansas",
+          "y": 0
+        },
+        {
+          "x": "Rhode Island",
+          "y": 0
+        },
+        {
+          "x": "Maryland",
+          "y": 0
+        },
+        {
+          "x": "Kansas",
+          "y": 0
+        },
+        {
+          "x": "Mississippi",
+          "y": 0
+        },
+        {
+          "x": "Utah",
+          "y": 0
+        },
+        {
+          "x": "Hawaii",
+          "y": 1
+        },
+        {
+          "x": "Massachusetts",
           "y": 0
         }
       ]

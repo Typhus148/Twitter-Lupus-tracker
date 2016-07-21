@@ -30,17 +30,17 @@ function parse(spec)
         e.preventDefault();
     });
 
-    /*$("#option-4").click(function(e){
-        parse("Geo_data_optional_tweet_filters/#TEAMLUPUS_tweetMap.json");
+    $("#option-4").click(function(e){
+        parse("Geo_data_optional_tweet_filters/TEAMLUPUS_tweetMap.json");
         dropdown_selected = "Geo_data_optional_tweet_filters/#TEAMLUPUS_tweetMap.json";
         e.preventDefault();
     });
 
     $("#option-5").click(function(e){
-        parse("Geo_data_optional_tweet_filters/#beatlupus_tweetMap.json");
+        parse("Geo_data_optional_tweet_filters/beatlupus_tweetMap.json");
         dropdown_selected = "Geo_data_optional_tweet_filters/#beatlupus_tweetMap.json";
         e.preventDefault();
-    });*/
+    });
 
     $("#option-6").click(function(e){
         parse("Geo_data_optional_tweet_filters/lhandsign_tweetMap.json");
@@ -48,8 +48,7 @@ function parse(spec)
         e.preventDefault();
     });
 
-    function pyTimeStamp(callback)
-    {
+    function pyTimeStamp(callback) {
         var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
         xobj.open('GET', 'geo_data_states_update_status.json', true);
@@ -63,10 +62,6 @@ function parse(spec)
         xobj.send(null);
     }
 
-    function clearUpdate() {
-        parse("tweetMap.json");
-    }
-
     function updateChecker() {
         pyTimeStamp(function(response)
         {
@@ -74,9 +69,6 @@ function parse(spec)
             if (pyTS.status ==  true)
             {
                 parse("update_tweetMap.json");
-                //Replace this with a better function to sleep for 5s then reload the defualt tweetMap
-                //Consumes too much memory if let run for a little bit of time causeing massive page lag
-                //window.setInterval(clearUpdate, 5000);
             }
             else
             {

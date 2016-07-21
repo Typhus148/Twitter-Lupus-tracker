@@ -20,6 +20,7 @@ def save_new_geo_data(state):
     # writes new geo data to file
     with open(GEO_DATA_FILENAME, 'w') as outfile:
         json.dump(states_tweet_volume, outfile)
+    maximum_tweets(states_tweet_volume, 'tweetMap.json')
 
     # file for html and javascript to read to know if geo_states_data was changed and then to reload tweetMap
     with open(GEO_STATES_UPDATE_STATUS, 'w') as outfile:
@@ -27,7 +28,6 @@ def save_new_geo_data(state):
         update_status = {"status": True}
         json.dump(update_status, outfile)
     updated_state_color(states_tweet_volume, state)
-    maximum_tweets(states_tweet_volume, 'tweetMap.json')
 
 
 # Saves new geo data for tweets that are within the filter option
@@ -42,13 +42,13 @@ def save_new_geo_options_data(state, filter_option):
     with open(GEO_OPTIONAL_FILTER_TWEETS_DIRECTORY + filter_option + GEO_DATA_OPTIONAL_FILTER, 'r') as infile:
         states_tweet_volume = json.load(infile)
     states_tweet_volume[state] += 1
-    maximum_tweets(states_tweet_volume, (GEO_OPTIONAL_FILTER_TWEETS_DIRECTORY + filter_option +
-                                         GEO_DATA_OPTIONAL_FILTER))
-    updated_state_color(states_tweet_volume, state)
 
     # writes new geo data for passed option
     with open(GEO_OPTIONAL_FILTER_TWEETS_DIRECTORY + filter_option + GEO_DATA_OPTIONAL_FILTER, 'w') as outfile:
         json.dump(states_tweet_volume, outfile)
+    maximum_tweets(states_tweet_volume, (GEO_OPTIONAL_FILTER_TWEETS_DIRECTORY + filter_option +
+                                         GEO_DATA_OPTIONAL_FILTER))
+    updated_state_color(states_tweet_volume, state)
 
 
 # Used to determine the thresh hold for the tweets to be bucketed in for graphing

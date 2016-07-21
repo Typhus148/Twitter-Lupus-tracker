@@ -32,6 +32,7 @@ def tweet_filter(text):
     return False
 
 
+# Returns True if the lupus tweet passes both tests to check it pertains to lupus and false if not
 def lupus_api_filterer(text):
     if (lupus_text_checker(text['text']) == True) and (tweet_filter(text['text']) == False):
         return True

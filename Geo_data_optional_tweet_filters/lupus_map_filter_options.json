@@ -1,1 +1,304 @@
-{"Wyoming": 2, "New Hampshire": 2, "Nevada": 15, "Montana": 3, "Alaska": 0, "Rhode Island": 5, "Texas": 116, "Wisconsin": 11, "Ohio": 29, "Utah": 0, "Colorado": 9, "Tennessee": 8, "Oregon": 25, "New Jersey": 25, "Virginia": 88, "Massachusetts": 11, "South Dakota": 1, "Maryland": 23, "Vermont": 0, "Arizona": 58, "Delaware": 1, "Idaho": 6, "North Carolina": 14, "Mississippi": 8, "Kentucky": 6, "Hawaii": 3, "South Carolina": 18, "Oklahoma": 11, "Indiana": 21, "Kansas": 8, "New Mexico": 0, "Illinois": 26, "North Dakota": 0, "Florida": 119, "Maine": 12, "Louisiana": 11, "Minnesota": 28, "Georgia": 27, "West Virginia": 0, "Michigan": 17, "California": 109, "Washington": 268, "Connecticut": 11, "Arkansas": 4, "Nebraska": 3, "Iowa": 0, "Pennsylvania": 43, "New York": 109, "Missouri": 9, "Alabama": 6}
+{
+  "axes": [],
+  "data": [
+    {
+      "name": "table",
+      "values": [
+        {
+          "x": "Minnesota",
+          "y": 28
+        },
+        {
+          "x": "Alaska",
+          "y": 0
+        },
+        {
+          "x": "Tennessee",
+          "y": 8
+        },
+        {
+          "x": "Utah",
+          "y": 0
+        },
+        {
+          "x": "Connecticut",
+          "y": 11
+        },
+        {
+          "x": "Virginia",
+          "y": 88
+        },
+        {
+          "x": "Mississippi",
+          "y": 8
+        },
+        {
+          "x": "Iowa",
+          "y": 0
+        },
+        {
+          "x": "Washington",
+          "y": 268
+        },
+        {
+          "x": "Michigan",
+          "y": 17
+        },
+        {
+          "x": "New Hampshire",
+          "y": 2
+        },
+        {
+          "x": "South Dakota",
+          "y": 1
+        },
+        {
+          "x": "Vermont",
+          "y": 0
+        },
+        {
+          "x": "Montana",
+          "y": 3
+        },
+        {
+          "x": "Colorado",
+          "y": 9
+        },
+        {
+          "x": "California",
+          "y": 109
+        },
+        {
+          "x": "Louisiana",
+          "y": 11
+        },
+        {
+          "x": "Oklahoma",
+          "y": 11
+        },
+        {
+          "x": "Oregon",
+          "y": 25
+        },
+        {
+          "x": "North Dakota",
+          "y": 0
+        },
+        {
+          "x": "Idaho",
+          "y": 6
+        },
+        {
+          "x": "Alabama",
+          "y": 6
+        },
+        {
+          "x": "Arkansas",
+          "y": 4
+        },
+        {
+          "x": "Illinois",
+          "y": 26
+        },
+        {
+          "x": "Nebraska",
+          "y": 3
+        },
+        {
+          "x": "Maine",
+          "y": 12
+        },
+        {
+          "x": "New Mexico",
+          "y": 0
+        },
+        {
+          "x": "Indiana",
+          "y": 21
+        },
+        {
+          "x": "Texas",
+          "y": 116
+        },
+        {
+          "x": "Ohio",
+          "y": 29
+        },
+        {
+          "x": "Rhode Island",
+          "y": 5
+        },
+        {
+          "x": "Missouri",
+          "y": 9
+        },
+        {
+          "x": "Maryland",
+          "y": 23
+        },
+        {
+          "x": "Georgia",
+          "y": 27
+        },
+        {
+          "x": "Florida",
+          "y": 119
+        },
+        {
+          "x": "Massachusetts",
+          "y": 11
+        },
+        {
+          "x": "Wyoming",
+          "y": 2
+        },
+        {
+          "x": "Hawaii",
+          "y": 3
+        },
+        {
+          "x": "West Virginia",
+          "y": 0
+        },
+        {
+          "x": "Kentucky",
+          "y": 6
+        },
+        {
+          "x": "Kansas",
+          "y": 8
+        },
+        {
+          "x": "Wisconsin",
+          "y": 11
+        },
+        {
+          "x": "Pennsylvania",
+          "y": 43
+        },
+        {
+          "x": "Arizona",
+          "y": 58
+        },
+        {
+          "x": "North Carolina",
+          "y": 14
+        },
+        {
+          "x": "Nevada",
+          "y": 15
+        },
+        {
+          "x": "New Jersey",
+          "y": 25
+        },
+        {
+          "x": "New York",
+          "y": 110
+        },
+        {
+          "x": "South Carolina",
+          "y": 18
+        },
+        {
+          "x": "Delaware",
+          "y": 1
+        }
+      ]
+    },
+    {
+      "format": {
+        "feature": "us_states.geo",
+        "type": "topojson"
+      },
+      "name": "states",
+      "transform": [
+        {
+          "as": "value",
+          "default": "noval",
+          "key": "data.properties.NAME",
+          "type": "zip",
+          "with": "table",
+          "withKey": "data.x"
+        },
+        {
+          "test": "d.path!='noval' && d.value!='noval'",
+          "type": "filter"
+        },
+        {
+          "projection": "albersUsa",
+          "scale": 1000,
+          "translate": [
+            480.0,
+            250.0
+          ],
+          "type": "geopath",
+          "value": "data"
+        }
+      ],
+      "url": "https://raw.githubusercontent.com/wrobstory/vincent_map_data/master/us_states.topo.json"
+    }
+  ],
+  "height": 500,
+  "legends": [
+    {
+      "fill": "color",
+      "offset": 0,
+      "properties": {},
+      "title": "# of Lupus Tweets"
+    }
+  ],
+  "marks": [
+    {
+      "from": {
+        "data": "states"
+      },
+      "properties": {
+        "enter": {
+          "path": {
+            "field": "path"
+          },
+          "stroke": {
+            "value": "#000000"
+          }
+        },
+        "update": {
+          "fill": {
+            "field": "value.data.y",
+            "scale": "color"
+          }
+        }
+      },
+      "type": "path"
+    }
+  ],
+  "padding": "auto",
+  "scales": [
+    {
+      "domain": [
+        0,
+        33,
+        67,
+        100,
+        134,
+        167,
+        201,
+        234
+      ],
+      "name": "color",
+      "range": [
+        "#fcfbfd",
+        "#efedf5",
+        "#dadaeb",
+        "#bcbddc",
+        "#9e9ac8",
+        "#807dba",
+        "#6a51a3",
+        "#54278f",
+        "#3f007d"
+      ],
+      "type": "threshold"
+    }
+  ],
+  "width": 960
+}

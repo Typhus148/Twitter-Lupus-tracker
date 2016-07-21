@@ -4,6 +4,7 @@ from twitter_api_util import save_new_geo_options_data
 filter_options = ['lupus', 'lupusawarenessmonth', 'lupus awareness month', '#TEAMLUPUS', '#beatlupus', 'lhandsign']
 
 
+# Checks accepted tweets to see if they contain one or more of the filter options text within the tweet
 def specific_tweet_filter(tweet, filter_text):
     tweet = tweet.lower()
     filter_text = filter_text.lower()
