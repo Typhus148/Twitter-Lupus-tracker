@@ -9,8 +9,10 @@ def visualizeStateData(stateDict, dataBind, dataKey, thresholds, file_name, upda
     stateCount = 0
     # If true means map was updated with new tweet and is to use appropriate color set
     if update:
+        # Color set to display updated state in green
         color_option = 'Custom_set_1'
     else:
+        # defualt color set for displaying the regular tweet map
         color_option = 'Purples'
 
     for (key, value) in stateDict.items():
@@ -21,6 +23,7 @@ def visualizeStateData(stateDict, dataBind, dataKey, thresholds, file_name, upda
     visualizePandasData(stateData, dataBind, dataKey, thresholds, file_name, color_option)
 
 
+# Creates the json file that will be read by the javascript to be displayed on a webpage
 def visualizePandasData(stateData, dataBind, dataKey, thresholds, file_name, color_option):
     state_topo = 'https://raw.githubusercontent.com/wrobstory/vincent_map_data/master/us_states.topo.json'
     geo_data = [{'name': 'states', 'url': state_topo, 'feature': 'us_states.geo'}]
