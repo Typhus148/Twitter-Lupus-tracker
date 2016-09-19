@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+__author__ = 'Philip'
 from twitter_api_auth import consumer_key, consumer_secret, access_token, access_token_secret
 from tweepy.streaming import StreamListener
 from tweepy import OAuthHandler
@@ -6,9 +7,11 @@ from tweepy import Stream
 from twitter_api_filterer import lupus_api_filterer
 from twitter_api_util import save_new_geo_data, GEO_STATES_UPDATE_STATUS
 import json
+# import traceback
 from twitter_api_states import api_states
-# from twitter_api_additional_map_filters import update_geo_option_data
+from twitter_api_additional_map_filters import update_geo_option_data
 from Dropbox_api_bot import dropbox_main
+# from twitter_api_email_alert import send_email_alert
 
 
 class StdOutListener(StreamListener):
@@ -31,7 +34,7 @@ class StdOutListener(StreamListener):
                     else:
                         # Updates geo data if there was a update to the geo data counter
                         save_new_geo_data(state)
-                        # update_geo_option_data(text, state)
+                        update_geo_option_data(text, state)
 
                     # Appends the new tweet to the list of previous tweets
                     dropbox_main(data)
@@ -42,7 +45,6 @@ class StdOutListener(StreamListener):
 
     def on_error(self, status):
         print(status)
-
 
 def lupus_tweet_tracker_setup():
     # This handles Twitter authentication and the connection to Twitter Streaming API
@@ -57,5 +59,4 @@ def lupus_tweet_tracker_setup():
 
 
 if __name__ == '__main__':
-    print('Starting up lupus twitter bot...')
     lupus_tweet_tracker_setup()
