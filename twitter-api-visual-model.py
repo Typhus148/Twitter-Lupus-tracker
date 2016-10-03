@@ -46,6 +46,7 @@ class StdOutListener(StreamListener):
     def on_error(self, status):
         print(status)
 
+
 def lupus_tweet_tracker_setup():
     # This handles Twitter authentication and the connection to Twitter Streaming API
     l = StdOutListener()
@@ -59,4 +60,5 @@ def lupus_tweet_tracker_setup():
 
 
 if __name__ == '__main__':
+    print('Starting up lupus twitter bot...')
     lupus_tweet_tracker_setup()
